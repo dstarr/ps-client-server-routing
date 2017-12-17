@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Table} from "react-bootstrap";
 import AddPerson from "./AddPerson";
+import PropTypes from 'prop-types';
 
 class People extends React.Component {
 
@@ -35,7 +36,8 @@ class People extends React.Component {
             backgroundColor: '#5897E2',
             margin: 20,
             padding: 20,
-            width: 800
+            width: 800,
+            textAlign: 'left'
         };
 
         let people = this.state.people.map((person, index) => (
@@ -57,8 +59,10 @@ class People extends React.Component {
                         <th>Occupation</th>
                         <th>&nbsp;</th>
                     </tr>
-                    {people}
                     </thead>
+                    <tbody>
+                    {people}
+                    </tbody>
                 </Table>
 
                 <div>
@@ -68,5 +72,9 @@ class People extends React.Component {
         );
     }
 }
+
+People.PropTypes = {
+    people: PropTypes.array.isRequired
+};
 
 export default People
