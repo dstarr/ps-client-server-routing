@@ -59,7 +59,6 @@ class AddPerson extends React.Component {
 
         return (
             <div align="left">
-
                 <FormGroup>
                     <FormControl
                         style={inputStyle}
@@ -87,8 +86,6 @@ class AddPerson extends React.Component {
                     {' '}
                     <Button onClick={this.onSubmitNewPerson}>Add Person</Button>
                 </FormGroup>
-
-
             </div>)
 
     }
