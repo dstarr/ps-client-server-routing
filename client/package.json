@@ -1,0 +1,41 @@
+{
+  "name": "React-Node-Bootstrap",
+  "version": "1.0.0",
+  "description": "Bootstrap project for new React+Node app",
+  "author": "David Starr | elegantcode.com | @elegantcoder",
+  "license": "UNLICENSED",
+  "scripts": {
+    "test": "mocha -r babel-core/register --recursive ./test/",
+    "start": "webpack --progress --colors --watch",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.2.0",
+    "superagent": "^3.8.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "expose-loader": "^0.7.4",
+    "file-loader": "^1.1.5",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "node-sass": "^4.7.2",
+    "sass-import-modules": "^2.1.0",
+    "sass-loader": "^6.0.6",
+    "strip-loader": "^0.1.2",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "url = https://github.com/dstarr/react-node-bootstrap.git"
+  }
+}

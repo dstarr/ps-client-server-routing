@@ -1,0 +1,24 @@
+{
+  "name": "eebc-node-demo",
+  "version": "1.0.0",
+  "description": "A Node.js web application",
+  "author": "GoDaddy",
+  "license": "UNLICENSED",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --recursive ./tests/",
+    "start": "gulp"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "url = https://github.com/dstarr/react-node-bootstrap.git"
+  }
+}
