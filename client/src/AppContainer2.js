@@ -1,5 +1,12 @@
 import React from 'react';
-import HelloComponent from "./components1/HelloComponent";
+import People from "./components2/People";
+
+let people = [
+    {first: 'David', last: 'Starr', occupation: 'Technical Learning Director'},
+    {first: 'Ben', last: 'Day', occupation: 'Independent Consultant'},
+    {first: 'Scott', last: 'Allen', occupation: 'Web Developer'},
+    {first: 'Aaron', last: 'Skonnard', occupation: 'Pluralsight CEO'}
+];
 
 class AppContainer2 extends React.Component {
 
@@ -12,7 +19,7 @@ class AppContainer2 extends React.Component {
 
         return (
             <div>
-                <HelloComponent/>
+                <People people={people} />
             </div>
         );
     }

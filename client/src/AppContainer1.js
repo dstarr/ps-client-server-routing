@@ -1,5 +1,5 @@
 import React from 'react';
-import HelloComponent from "./components1/HelloComponent";
+import ColorBox from "./components1/ColorBox";
 
 class AppContainer1 extends React.Component {
 
@@ -12,7 +12,7 @@ class AppContainer1 extends React.Component {
 
         return (
             <div>
-                <HelloComponent/>
+                <ColorBox color={'#CAF663'} text={'Green'}/>
             </div>
         );
     }
