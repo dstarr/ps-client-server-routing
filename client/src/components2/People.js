@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Table} from "react-bootstrap";
 import AddPerson from "./AddPerson";
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
 class People extends React.Component {
 
@@ -42,7 +43,7 @@ class People extends React.Component {
 
         let people = this.state.people.map((person, index) => (
             <tr key={index}>
-                <td>{person.first + ' ' + person.last}</td>
+                <td><Link to={'/people/:id'}>{person.first + ' ' + person.last}</Link></td>
                 <td>{person.occupation}</td>
                 <td>
                     <Button onClick={e => this.onHandleDelete(e, person.first, person.last)}>Delete</Button>

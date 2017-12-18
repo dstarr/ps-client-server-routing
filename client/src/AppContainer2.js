@@ -4,10 +4,10 @@ import {BrowserRouter, Link, Route} from 'react-router-dom';
 import Home from "./components2/Home";
 
 let people = [
-    {first: 'David', last: 'Starr', occupation: 'Technical Learning Director'},
-    {first: 'Ben', last: 'Day', occupation: 'Independent Consultant'},
-    {first: 'Homer', last: 'Griffon', occupation: 'Web Developer'},
-    {first: 'Peter', last: 'Simpson', occupation: 'CEO'}
+    {id: 1, first: 'David', last: 'Starr', occupation: 'Technical Learning Director'},
+    {id: 2, first: 'Ben', last: 'Day', occupation: 'Independent Consultant'},
+    {id: 3, first: 'Homer', last: 'Griffon', occupation: 'Web Developer'},
+    {id: 4, first: 'Peter', last: 'Simpson', occupation: 'CEO'}
 ];
 
 class AppContainer2 extends React.Component {
@@ -18,8 +18,6 @@ class AppContainer2 extends React.Component {
         this.state = {
             people: people
         };
-
-
     }
 
     render = () => {
@@ -61,6 +59,7 @@ class AppContainer2 extends React.Component {
                         <Route path={'/people'}
                                render={() => <People people={this.state.people}/>}
                         />
+
                         {/* <Route path={'/places'} component={Places}/> */}
                     </div>
                 </div>
