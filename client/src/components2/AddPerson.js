@@ -34,13 +34,11 @@ class AddPerson extends React.Component {
 
     onSubmitNewPerson = (e) => {
 
-        let person = {
-            first: this.state.newFirstName,
-            last: this.state.newLastName,
-            occupation: this.state.newOccupation
-        };
+        const first = this.state.newFirstName;
+        const last = this.state.newLastName;
+        const occupation = this.state.newOccupation;
 
-        this.props.onAddPerson(person);
+        this.props.onAddPerson(first, last, occupation);
 
         this.setState({
             newFirstName: '',

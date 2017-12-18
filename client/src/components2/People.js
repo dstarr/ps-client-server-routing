@@ -14,15 +14,25 @@ class People extends React.Component {
         };
     }
 
-    onHandleDelete = (event, firstName, lastName) => {
-        let people = this.state.people.filter(person => (firstName !== person.first || lastName !== person.last));
+    onHandleDelete = (event, id) => {
+        let people = this.state.people.filter(person => (id !== person.id));
 
         this.setState({
             people: people
         });
     };
 
-    onHandleNew = (person) => {
+    onHandleNew = (first, last, occupation) => {
+
+        let id = this.getId();
+
+        let person = {
+            id: id,
+            first: first,
+            last: last,
+            occupation: occupation
+        }
+
 
         let people = this.state.people;
         people.push(person);
@@ -34,7 +44,6 @@ class People extends React.Component {
     render = () => {
 
         const style = {
-            backgroundColor: '#5897E2',
             margin: 20,
             padding: 20,
             width: 800,
@@ -43,10 +52,11 @@ class People extends React.Component {
 
         let people = this.state.people.map((person, index) => (
             <tr key={index}>
+                <td>{person.id}</td>
                 <td><Link to={'/people/:id'}>{person.first + ' ' + person.last}</Link></td>
                 <td>{person.occupation}</td>
                 <td>
-                    <Button onClick={e => this.onHandleDelete(e, person.first, person.last)}>Delete</Button>
+                    <Button onClick={e => this.onHandleDelete(e, person.id)}>Delete</Button>
                 </td>
             </tr>
         ));
@@ -56,6 +66,7 @@ class People extends React.Component {
                 <Table>
                     <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Occupation</th>
                         <th>&nbsp;</th>
@@ -71,6 +82,19 @@ class People extends React.Component {
                 </div>
             </div>
         );
+    };
+
+    getId() {
+
+        let currentId = 0;
+
+        for (let i = 0; i < this.state.people.length; i++) {
+
+            if (this.state.people[i].id > currentId)
+                currentId = this.state.people[i].id;
+        }
+
+        return currentId + 1;
     }
 }
 
