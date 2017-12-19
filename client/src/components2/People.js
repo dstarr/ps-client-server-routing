@@ -31,13 +31,10 @@ class People extends React.Component {
             first: first,
             last: last,
             occupation: occupation
-        }
+        };
 
-
-        let people = this.state.people;
-        people.push(person);
         this.setState({
-            people: people
+            people: this.state.people.concat(person)
         });
     };
 
@@ -62,23 +59,26 @@ class People extends React.Component {
         ));
 
         return (
-            <div style={style}>
-                <Table>
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Occupation</th>
-                        <th>&nbsp;</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {people}
-                    </tbody>
-                </Table>
+            <div>
+                <h1>People</h1>
+                <div style={style}>
+                    <Table>
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Occupation</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {people}
+                        </tbody>
+                    </Table>
 
-                <div>
-                    <AddPerson onAddPerson={this.onHandleNew}/>
+                    <div>
+                        <AddPerson onAddPerson={this.onHandleNew}/>
+                    </div>
                 </div>
             </div>
         );
@@ -95,7 +95,7 @@ class People extends React.Component {
         }
 
         return currentId + 1;
-    }
+    };
 }
 
 People.PropTypes = {

@@ -2,6 +2,7 @@ import React from 'react';
 import People from "./components2/People";
 import {BrowserRouter, Link, Route} from 'react-router-dom';
 import Home from "./components2/Home";
+import Places from "./components2/Places";
 
 let people = [
     {id: 1, first: 'David', last: 'Starr', occupation: 'Technical Learning Director'},
@@ -23,7 +24,7 @@ class AppContainer2 extends React.Component {
     render = () => {
 
         const linkStyle = {
-            fontSize: 20
+            fontSize: 18
         };
 
         const linkContainerStyle = {
@@ -31,8 +32,7 @@ class AppContainer2 extends React.Component {
             position: 'fixed',
             height: '100%',
             width: 200,
-            backgroundColor: '#f0f0f0',
-            top: 0
+            backgroundColor: '#f0f0f0'
         };
 
         const contentStyle = {
@@ -50,7 +50,7 @@ class AppContainer2 extends React.Component {
                         <nav>
                             <div><Link style={linkStyle} to={'/'}>Home</Link></div>
                             <div><Link style={linkStyle} to={'/people'}>People</Link></div>
-                            <div><Link style={linkStyle} to={'/routeB'}>Places</Link></div>
+                            <div><Link style={linkStyle} to={'/places'}>Places</Link></div>
                         </nav>
                     </div>
 
@@ -60,7 +60,7 @@ class AppContainer2 extends React.Component {
                                render={() => <People people={this.state.people}/>}
                         />
 
-                        {/* <Route path={'/places'} component={Places}/> */}
+                        <Route path={'/places'} component={Places}/>
                     </div>
                 </div>
             </BrowserRouter>
