@@ -1,8 +1,10 @@
 import React from 'react';
 import People from "./components2/People";
-import {BrowserRouter, Link, Route} from 'react-router-dom';
+import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
 import Home from "./components2/Home";
 import Places from "./components2/Places";
+import PersonProfile from "./components2/PersonProfile";
+import PageNotFound from "./components2/PageNotFound";
 
 let people = [
     {id: 1, first: 'David', last: 'Starr', occupation: 'Technical Learning Director'},
@@ -51,16 +53,20 @@ class AppContainer2 extends React.Component {
                             <div><Link style={linkStyle} to={'/'}>Home</Link></div>
                             <div><Link style={linkStyle} to={'/people'}>People</Link></div>
                             <div><Link style={linkStyle} to={'/places'}>Places</Link></div>
+                            <div><Link style={linkStyle} to={'/foo'}>Nope</Link></div>
                         </nav>
                     </div>
 
                     <div style={contentStyle}>
-                        <Route path={'/'} component={Home} exact/>
-                        <Route path={'/people'}
-                               render={() => <People people={this.state.people}/>}
-                        />
-
-                        <Route path={'/places'} component={Places}/>
+                        <Switch>
+                            <Route path={'/'} component={Home} exact/>
+                            <Route path={'/people/:id'} component={PersonProfile}/>
+                            <Route path={'/people'}
+                                   render={() => <People people={this.state.people}/>}
+                            />
+                            <Route path={'/places'} component={Places}/>
+                            <Route component={PageNotFound} />
+                        </Switch>
                     </div>
                 </div>
             </BrowserRouter>

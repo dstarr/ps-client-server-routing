@@ -1,7 +1,7 @@
 var express = require('express');
 var http = require('http');
-var personApiRouter = require('./routes/apiRouter');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 var app = express();
 
@@ -11,8 +11,9 @@ app
     // serve up the public folder as static content
     .use('/', express.static('./public'));
 
-    // provide simple REST API endpoints via a dedicated api apiRouter
-    // .use('/api', personApiRouter)
+app.get('*', function (request, response) {
+    response.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+});
 
 module.exports = app;
 

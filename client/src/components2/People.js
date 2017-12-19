@@ -50,7 +50,11 @@ class People extends React.Component {
         let people = this.state.people.map((person, index) => (
             <tr key={index}>
                 <td>{person.id}</td>
-                <td><Link to={'/people/:id'}>{person.first + ' ' + person.last}</Link></td>
+                <td>
+                    <Link to={'/people/' + person.id + '?name=' + person.first + ' ' + person.last + '&occupation=' + person.occupation}>
+                        {person.first + ' ' + person.last}
+                    </Link>
+                </td>
                 <td>{person.occupation}</td>
                 <td>
                     <Button onClick={e => this.onHandleDelete(e, person.id)}>Delete</Button>
