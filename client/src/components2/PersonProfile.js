@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const PersonProfile = (props) => {
 
-    const query = new URLSearchParams(props.location.search)
+    const query = new URLSearchParams(props.location.search);
     const name = query.get('name');
     const occupation = query.get('occupation');
 

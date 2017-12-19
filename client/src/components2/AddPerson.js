@@ -32,7 +32,7 @@ class AddPerson extends React.Component {
         });
     };
 
-    onSubmitNewPerson = (e) => {
+    onSubmitNewPerson = () => {
 
         const first = this.state.newFirstName;
         const last = this.state.newLastName;

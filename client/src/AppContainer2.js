@@ -1,6 +1,6 @@
 import React from 'react';
 import People from "./components2/People";
-import {BrowserRouter, Link, Route, Switch} from 'react-router-dom';
+import {BrowserRouter, Link, NavLink, Route, Switch} from 'react-router-dom';
 import Home from "./components2/Home";
 import Places from "./components2/Places";
 import PersonProfile from "./components2/PersonProfile";
@@ -50,10 +50,10 @@ class AppContainer2 extends React.Component {
                 <div>
                     <div style={linkContainerStyle}>
                         <nav>
-                            <div><Link style={linkStyle} to={'/'}>Home</Link></div>
-                            <div><Link style={linkStyle} to={'/people'}>People</Link></div>
-                            <div><Link style={linkStyle} to={'/places'}>Places</Link></div>
-                            <div><Link style={linkStyle} to={'/foo'}>Nope</Link></div>
+                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/'} exact>Home</NavLink></div>
+                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/people'}>People</NavLink></div>
+                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/places'}>Places</NavLink></div>
+                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/foo'}>Nope</NavLink></div>
                         </nav>
                     </div>
 
