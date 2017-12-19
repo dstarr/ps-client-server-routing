@@ -49,12 +49,12 @@ class AppContainer2 extends React.Component {
             <BrowserRouter>
                 <div>
                     <div style={linkContainerStyle}>
-                        <nav>
-                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/'} exact>Home</NavLink></div>
-                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/people'}>People</NavLink></div>
-                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/places'}>Places</NavLink></div>
-                            <div><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/foo'}>Nope</NavLink></div>
-                        </nav>
+                        <ul>
+                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/'} exact>Home</NavLink></li>
+                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/people'}>People</NavLink></li>
+                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/places'}>Places</NavLink></li>
+                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/foo'}>Nope</NavLink></li>
+                        </ul>
                     </div>
 
                     <div style={contentStyle}>

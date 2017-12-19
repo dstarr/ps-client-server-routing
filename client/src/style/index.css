@@ -2,11 +2,12 @@
     font-weight: bold;
 }
 
-a {
+a, a:hover {
     text-decoration: none;
     color: black;
 }
 
 li {
     list-style-type: none;
+    margin: 0px;
 }
