@@ -5,6 +5,7 @@ import Home from "./components2/Home";
 import Places from "./components2/Places";
 import PersonProfile from "./components2/PersonProfile";
 import PageNotFound from "./components2/PageNotFound";
+import LeftNav from "./components2/LeftNav";
 
 let people = [
     {id: 1, first: 'David', last: 'Starr', occupation: 'Technical Learning Director'},
@@ -25,18 +26,6 @@ class AppContainer2 extends React.Component {
 
     render = () => {
 
-        const linkStyle = {
-            fontSize: 18
-        };
-
-        const linkContainerStyle = {
-            padding: 20,
-            position: 'fixed',
-            height: '100%',
-            width: 200,
-            backgroundColor: '#f0f0f0'
-        };
-
         const contentStyle = {
             flex: 1,
             position: 'fixed',
@@ -48,13 +37,8 @@ class AppContainer2 extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <div style={linkContainerStyle}>
-                        <ul>
-                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/'} exact>Home</NavLink></li>
-                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/people'}>People</NavLink></li>
-                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/places'}>Places</NavLink></li>
-                            <li><NavLink activeClassName={'activeNavLink'} style={linkStyle} to={'/foo'}>Nope</NavLink></li>
-                        </ul>
+                    <div className={'leftNavContainer'}>
+                        <LeftNav />
                     </div>
 
                     <div style={contentStyle}>
